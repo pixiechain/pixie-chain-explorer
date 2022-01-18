@@ -10,9 +10,13 @@ $header-textfield-text-color: $header-links-color !default;
 $header-textfield-background-color: #f5f6fa !default;
 $header-textfield-magnifier-color: $header-links-color !default;
 $header-link-horizontal-padding: 0.71rem;
-$navbar-logo-height: 28px !default;
+//$navbar-logo-height: 28px !default;
+$navbar-logo-height: 60px !default;
 $navbar-logo-width: auto !default;
 
+.navbar {
+  padding: 0 1rem !important;
+}
 .navbar.navbar-primary {
   background-color: $header-background-color;
   position: relative;

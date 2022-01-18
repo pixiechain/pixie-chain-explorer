@@ -1,10 +1,14 @@
-$footer-background-color: $secondary !default;
+//$footer-background-color: $secondary !default;
+$footer-background-color: #111111;
 $footer-title-color: #fff !default;
-$footer-text-color: rgba(#fff, 0.7) !default;
+//$footer-text-color: rgba(#fff, 0.7) !default;
+$footer-text-color: #A67A53;
 $footer-link-color: $footer-text-color !default;
 $footer-item-disc-color: $primary !default;
-$footer-social-icon-color: $footer-text-color !default;
-$footer-logo-height: 28px !default;
+//$footer-social-icon-color: $footer-text-color !default;
+$footer-social-icon-color: white !default;
+//$footer-logo-height: 28px !default;
+$footer-logo-height: 60px !default;
 $footer-logo-width: auto !default;
 
 .footer {
@@ -33,12 +37,13 @@ $footer-logo-width: auto !default;
 .footer-info-text {
   margin: 0 0 25px;
   padding: 0 20px 0 0;
+  color: #A67A53;
 }
 
 .footer-social-icons {
   align-items: center;
   display: flex;
-  margin: 0 0 25px;
+  margin: 16px 0 0;
 }
 
 .footer-social-icon {
@@ -118,4 +123,64 @@ $footer-logo-width: auto !default;
 
 .footer-brand {
   text-decoration: none !important;
+}
+
+.pixgram-footer {
+  .flex_center {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+  }
+  .flex_column {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+  }
+  .mt20 {
+    margin-top: 20px;
+  }
+  div, ul, img, h1, h2, h3, h4, h5, h6, body {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+  }
+  .flex_items {
+    align-items: center;
+  }
+  .flex_between {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+  img {
+    width: auto;
+    height: auto;
+  }
+  .f12 {
+    font-size: 12px;
+  }
+  .flex_start {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .el-image {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .mr15 {
+    margin-right: 15px;
+  }
+  .el-image__inner {
+    vertical-align: top;
+  }
+  .el-image__error, .el-image__inner, .el-image__placeholder {
+    width: 100%;
+    height: 100%;
+  }
+  p {
+    line-height: 1.5em;
+    margin: 0;
+  }
 }

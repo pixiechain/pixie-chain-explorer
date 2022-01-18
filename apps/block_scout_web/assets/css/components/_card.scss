@@ -9,10 +9,10 @@ $card-tab-icon-color: #20b760 !default;
 $card-tab-icon-color-active: #fff !default;
 
 .card {
-  background-color: $card-background-color;
+  //background-color: $card-background-color;
   border-radius: $card-default-border-radius;
   border: none;
-  box-shadow: 0 0 30px 0 rgba(202, 199, 226, 0.5);
+  //box-shadow: 0 0 30px 0 rgba(202, 199, 226, 0.5);
   margin-bottom: $common-container-margin;
 
   .block-details-row {
@@ -181,9 +181,15 @@ $card-tab-icon-color-active: #fff !default;
 .card-chain-transactions {
   min-height: 664px;
   max-height: auto;
+  background-color: transparent;
+  margin-bottom: 0;
+  padding-bottom: 30px;
 
   .tile {
     margin-bottom: 0;
+    background: #FFFFFF;
+    border: 1px solid #FFEBD6;
+    border-radius: 8px;
   }
 }
 

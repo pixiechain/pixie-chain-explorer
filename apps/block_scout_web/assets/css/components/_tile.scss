@@ -2,8 +2,11 @@ $tile-type-block-color: $primary !default;
 $tile-type-uncle-color: $cyan !default;
 $tile-type-reorg-color: $purple !default;
 $tile-type-emission-reward-color: $lilac !default;
-$tile-type-transaction-color: $blue !default;
-$tile-type-contract-call-color: $green !default;
+// $tile-type-transaction-color: $blue !default;
+$tile-type-transaction-color: #397DFA !default;
+$tile-type-label-color: #FFFBF7 !default;
+//$tile-type-contract-call-color: $green !default;
+$tile-type-contract-call-color: #5ACF57 !default;
 $tile-type-contract-creation-color: $dark-purple !default;
 $tile-type-token-transfer-color: $orange !default;
 $tile-type-unique-token-color: $orange !default;
@@ -11,7 +14,8 @@ $tile-type-unique-token-image-color: $orange !default;
 $tile-type-internal-transaction-color: $teal !default;
 $tile-type-api-documentation-color: $primary !default;
 $tile-type-progress-bar-color: $primary !default;
-$tile-status-error-reason: #ff7986 !default;
+//$tile-status-error-reason: #ff7986 !default;
+$tile-status-error-reason: #FF7900 !default;
 $tile-status-awaiting-internal-transactions: $warning !default;
 $tile-padding: 1rem;
 $tile-title-color: #333 !default;
@@ -19,14 +23,14 @@ $tile-body-a-color: #5959d8 !default;
 
 @mixin generate-tile-block($prefix, $color, $label-color: false) {
   &#{ $prefix } {
-    border-left: 4px solid $color;
+    //border-left: 4px solid $color;
 
     .tile-transaction-type-block {
       a {
         @if ($label-color) {
           color: $label-color;
         } @else {
-          color: $color;
+          //color: $color;
         }
       }
     }
@@ -35,7 +39,7 @@ $tile-body-a-color: #5959d8 !default;
       @if ($label-color) {
         color: $label-color;
       } @else {
-        color: $color;
+        //color: $color;
       }
     }
 
@@ -44,11 +48,15 @@ $tile-body-a-color: #5959d8 !default;
     }
 
     .tile-transaction-type-block {
-      background-color: rgba($color, 0.1);
-      border-bottom: 1px solid $color;
-      border-right: 1px solid $color;
-      border-top: 1px solid $color;
-      color: $color;
+      //background-color: rgba($color, 0.1);
+      //border-bottom: 1px solid $color;
+      //border-right: 1px solid $color;
+      //border-top: 1px solid $color;
+      //color: $color;
+      background-color: $color;
+      color: $label-color;
+      border: 0.5px solid $color;
+      border-radius: 8px 0 0 8px;
     }
   }
 }
@@ -117,19 +125,29 @@ $tile-body-a-color: #5959d8 !default;
 }
 
 .tile-bottom-contents {
-  background-color: #f6f7f9;
   font-size: 12px;
   line-height: 1.2;
-  padding: 0.8rem 1rem;
+  height: 78px;
+  background: #FFFBF7;
+  border-radius: 0px 0px 8px 8px;
+  padding: 0 20px;
+
+  .miner-label {
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: 400;
+    line-height: 14px;
+    color: #222222;
+  }
 }
 
 .tile-transactions {
-  color: #a3a9b5;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.2;
   margin-bottom: 10px;
   text-align: left;
+  font-family: Arial;
+  font-weight: 400;
+  line-height: 14px;
+  color: #999898;
 }
 
 .tile-badge {
@@ -199,18 +217,23 @@ $tile-body-a-color: #5959d8 !default;
       font-size: 16px;
     }
   }
-  border-radius: 4px;
-  border: 1px solid $border-color;
+
+  //border: 1px solid $border-color;
   color: $text-muted;
   flex-grow: 1;
   font-size: 12px;
   line-height: 1.4rem;
   padding: $tile-padding;
 
+  border: 1px solid #FFEBD6;
+  //box-shadow: 0px 3px 24px #ffecdb;
+  border-radius: 8px;
+
   @include generate-tile-block(
     ".tile-type-block",
     $tile-type-block-color,
-    darken($tile-type-block-color, 20%)
+    $tile-type-label-color
+    //darken($tile-type-block-color, 20%)
   );
   @include generate-tile-block(".tile-type-uncle", $tile-type-uncle-color);
   @include generate-tile-block(".tile-type-reorg", $tile-type-reorg-color);
@@ -220,43 +243,53 @@ $tile-body-a-color: #5959d8 !default;
   );
   @include generate-tile-block(
     ".tile-type-transaction",
-    $tile-type-transaction-color
+    $tile-type-transaction-color,
+    $tile-type-label-color
   );
   @include generate-tile-block(
     ".tile-type-contract-call",
-    $tile-type-contract-call-color
+    $tile-type-contract-call-color,
+    $tile-type-label-color
   );
   @include generate-tile-block(
     ".tile-type-contract-creation",
-    $tile-type-contract-creation-color
+    $tile-type-contract-creation-color,
+    $tile-type-label-color
   );
   @include generate-tile-block(
     ".tile-type-token-transfer",
-    $tile-type-token-transfer-color
+    $tile-type-token-transfer-color,
+    $tile-type-label-color
   );
   @include generate-tile-block(
     ".tile-type-unique-token",
-    $tile-type-unique-token-color
+    $tile-type-unique-token-color,
+    $tile-type-label-color
   );
   @include generate-tile-block(
     ".tile-type-unique-token-image",
-    $tile-type-unique-token-image-color
+    $tile-type-unique-token-image-color,
+    $tile-type-label-color
   );
   @include generate-tile-block(
     ".tile-type-internal-transaction",
-    $tile-type-internal-transaction-color
+    $tile-type-internal-transaction-color,
+    $tile-type-label-color
   );
   @include generate-tile-block(
     ".tile-type-api-documentation",
-    $tile-type-api-documentation-color
+    $tile-type-api-documentation-color,
+    $tile-type-label-color
   );
   @include generate-tile-block(
     '[class*="status--error"]',
-    $tile-status-error-reason
+    $tile-status-error-reason,
+    $tile-type-label-color
   );
   @include generate-tile-block(
     ".tile-status--awaiting-internal-transactions",
-    $tile-status-awaiting-internal-transactions
+    $tile-status-awaiting-internal-transactions,
+    $tile-type-label-color
   );
 
   &.n-p {
@@ -345,7 +378,32 @@ $tile-body-a-color: #5959d8 !default;
       }
     }
     .tile-type-block {  
-      overflow: hidden; 
+      overflow: hidden;
+      //border: 1px solid #FFEBD6;
+      //box-shadow: 0px 3px 24px #FFECDB;
+      //border-radius: 8px;
+      height: 125px;
+      border: 1px solid #FFEBD6;
+      //box-shadow: 0px 3px 24px #ffecdb;
+      border-radius: 8px;
+
+      a {
+        color: #FF7900;
+        span[data-address-hash] {
+          font-size: 12px;
+          font-family: Arial;
+          font-weight: 400;
+          line-height: 14px;
+          color: #FF7900;
+        }
+      }
+      a.block-number {
+        margin-left: 20px;
+        height: 47px;
+        line-height: 47px;
+        font-size: 16px;
+        font-weight: bold;
+      }
     }
     .row {
       @include media-breakpoint-down(lg) {

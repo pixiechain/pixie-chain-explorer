@@ -1,14 +1,55 @@
-<footer class="footer">
+<div class="pixgram-footer">
+    <div class="flex_center" style="background: #111;height: 124px;">
+        <div class="flex_column mt20" style="width: 1000px;">
+            <div class="flex_between flex_items">
+                <div class="flex_column">
+                    <img class="mt10" src="<%= logo_footer() %>" fit="cover" style="width:187px;" alt="<%= subnetwork_title() %>">
+                    <p class="f12 mt10" style="color: #999898;">©2021 - 2022 <a style="color: #397DFA;" href="https://pixie.xyz">Pixie.xyz</a> All rights reserved.</p>
+                </div>
+                <div class="flex_start flex_items">
+                    <a href="https://www.facebook.com/Pixie-104362245308470" target="_blank">
+                        <img class="mr15" src="/images/f.png" fit="cover" style="width:32px;">
+                    </a>
+                    <a href="https://twitter.com/PixieApp" target="_blank">
+                        <img class="mr15" src="/images/g.png" fit="cover" style="width:32px;">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCDb6btQSzsGEGG_UtGDrTJQ" target="_blank">
+                        <img class="mr15" src="/images/h.png" fit="cover" style="width:32px;">
+                    </a>
+                    <a href="https://t.me/Pixiegroup" target="_blank">
+                        <img src="/images/k.png" fit="cover" style="width:32px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer d-none">
   <div class="footer-body container">
     <!-- Logo -->
     <div class="row footer-logo-row">
-      <div class="col-md-12">
+      <div class="col-xs-12 col-lg-3">
         <%= link to: webapp_url(@conn), class: "footer-brand" do %>
           <img class="footer-logo" src="<%= logo_footer() %>" alt="<%= subnetwork_title() %>" />
           <%= if logo_text() do %>
             <span class="logo-text footer"> <%= logo_text() %> </span>
           <% end %>
         <% end %>
+      </div>
+      <div class="col-xs-12 col-md-4 col-lg-3"></div>
+      <div class="col-xs-12 col-md-4 col-lg-3"></div>
+      <div class="col-xs-12 col-md-4 col-lg-3">
+        <div class="footer-social-icons">
+          <a href="https://github.com/pixgram-chain/pixgram-chain" rel="noreferrer" target="_blank" class="footer-social-icon" title="Github">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.twitter.com/pixgram-chain/" rel="noreferrer" target="_blank" class="footer-social-icon" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://t.me/pixgram-chain" rel="noreferrer" target="_blank" class="footer-social-icon" title="Telegram">
+            <i class="fab fa-telegram-plane"></i>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -18,17 +59,6 @@
     <div class="row">
       <div class="col-xs-12 col-lg-3">
         <p class="footer-info-text"><%= gettext("Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.") %></p>
-        <div class="footer-social-icons">
-          <a href="https://github.com/blockscout/blockscout" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.twitter.com/blockscoutcom/" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://t.me/poa_network" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
-            <i class="fab fa-telegram-plane"></i>
-          </a>
-        </div>
       </div>
 
       <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
@@ -82,7 +112,7 @@
 
     <%= unless ignore_version?(version) do %>
       <% release_link = release_link(version) %>
-      <div>
+      <div style="display:none">
         <%= gettext("Version") %>: <%= release_link %>
       </div>
     <% end %>

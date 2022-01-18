@@ -5,17 +5,22 @@ $btn-dropdown-line-font: #333;
 
 .btn-dropdown-line {
   @include btn-line($btn-dropdown-line-bg, $btn-dropdown-line-color);
-  border-color: $btn-dropdown-line-color;
+  //border-color: $btn-dropdown-line-color;
   color: $btn-dropdown-line-font;
   outline: none !important;
   margin-right: 20px;
+  background-color: #fff;
+  border: 1px solid $btn-dropdown-line-color;
+  padding: 0 15px;
+
   &.no-rm {
     margin-right: 0;
   }
 
   &:hover {
-    background-color: $btn-dropdown-line-color-hover;
-    border-color: $btn-dropdown-line-color;
+    //background-color: $btn-dropdown-line-color-hover;
+    //border-color: $btn-dropdown-line-color;
     color: $btn-dropdown-line-font;
+    font-weight: bold;
   }
 }

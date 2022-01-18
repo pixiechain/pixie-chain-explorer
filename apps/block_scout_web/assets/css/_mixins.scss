@@ -129,28 +129,35 @@
 @mixin btn-line($bg-color: #fff, $text-color: $secondary) {
   -webkit-appearance: none !important;
   align-items: center;
-  background-color: $bg-color;
+  //background-color: $bg-color;
   border-radius: 2px;
-  border: 1px solid $text-color;
+  //border: 1px solid $text-color;
   color: $text-color;
   cursor: pointer;
   display: flex;
-  font-size: 12px;
-  font-weight: 600;
+  //font-size: 12px;
+  //font-weight: 600;
   height: 36px;
   justify-content: center;
   outline: none;
-  padding: 0 15px;
+  padding: 0 5px;
   text-decoration: none;
   transition: $transition-cont;
   white-space: nowrap;
   width: fit-content;
+  //font-weight: 400;
+
+  font-size: 11px;
+  //font-family: PingFang SC;
   font-weight: 400;
+  line-height: 16px;
+  //color: #999898;
 
   &:hover {
-    background-color: $text-color;
-    color: $bg-color;
+    //background-color: $text-color;
+    //color: $bg-color;
     text-decoration: none;
+    font-weight: bold;
 
     path {
       fill: $bg-color;
@@ -173,7 +180,7 @@
   &[disabled] {
     &,
     &:hover {
-      background-color: $bg-color!important;
+      //background-color: $bg-color!important;
       border-color: $primary!important;
       color: $primary!important;
       cursor: default;
