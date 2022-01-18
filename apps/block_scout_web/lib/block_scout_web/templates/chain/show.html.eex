@@ -173,7 +173,7 @@
   <div class="card card-chain-blocks">
     <div class="card-body">
         <div class="d-flex float-right justify-content-center align-items-center">
-            <%= link(gettext("View All Blocks"), to: block_path(BlockScoutWeb.Endpoint, :index), class: "btn-line float-right") %>
+            <%= link(gettext("View All Blocks"), to: blocks_path(BlockScoutWeb.Endpoint, :index), class: "btn-line float-right") %>
             <img class="home-right-arrow" src="/images/icons/arrow_right.png" />
         </div>
       <h2 class="card-title" style="font-weight:bold"><%= gettext "Blocks" %></h2>
